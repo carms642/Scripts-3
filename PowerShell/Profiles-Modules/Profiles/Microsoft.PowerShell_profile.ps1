@@ -946,7 +946,7 @@ Function Get-Printers {
     
     .INPUTS
     Param (
-        $computer            
+        [Parameter(Position=1)]$computer            
           )
         
 
@@ -968,7 +968,7 @@ Function Get-Printers {
     [CmdletBinding()]
     
     Param (
-        $computer            
+        [Parameter(Position=1)]$computer            
     )
         
 

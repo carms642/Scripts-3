@@ -1,0 +1,1 @@
+Hide music in function ending. Wrap music in it's own function and run that function at the end of your funciton.

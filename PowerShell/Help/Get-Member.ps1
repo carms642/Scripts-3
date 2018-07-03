@@ -1,3 +1,3 @@
 #Get available parmaters
-select-service | gm
-select-service | get-member
+get-service | gm
+get-service | get-member

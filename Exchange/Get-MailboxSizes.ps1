@@ -1,0 +1,1 @@
+get-mailbox | get-mailboxstatistics | Select-Object DisplayName,ItemCount,TotalItemSize 

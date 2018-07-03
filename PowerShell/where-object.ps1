@@ -7,7 +7,7 @@ get-service | Where-object name -eq ALG
 Get-service | where-object {($_.Name -notlike "Microsoft*" -and $_.Name -notlike "PS*") -and $_.Status -eq "running"}  | Sort-Object name
 
 #How to work with null values
-Where-Object {$_.IPAddress -ne $null}
+Get-CimInstance win32_networkadapterconfiguration | Where-Object {$_.IPAddress -ne $null} | Select-Object * | Format-List
 
 ### Conditional parameters and what they represent. More exist use "get-help where-object" to find those
 -like               like
@@ -18,6 +18,9 @@ Where-Object {$_.IPAddress -ne $null}
 -lt                 less than
 -ge                 greater than or equal
 -le                 less than or equal
-    
-#Use Where to remove null returned items
-Get-CimInstance win32_networkadapterconfiguration | Where-Object {$_.IPAddress -ne $null} | Select-Object * | Format-List
+   
+
+
+#Identifying objects in pipeline
+# $_ is a reference to objects in the pipeline
+# $_.name is an object property and can be used for any property piped in
